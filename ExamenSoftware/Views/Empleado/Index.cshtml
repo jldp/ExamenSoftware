@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Lista Empleados</h2>
+<link href="~/Content/datatables.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+<br />
+<!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar</button>
+
+<div id="tabla">
+
+
+</div>
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table style="width:80%;margin:auto">
+                    <tr>
+                        <td width="40%">Id Empleado</td>
+                        <td width="60%"><input type="text" id="txtIdEmpleado" readonly /></td>
+
+                    </tr>
+                    <tr>
+                        <td width="40%">Nombre</td>
+                        <td width="60%"><input type="text" id="txtNombre" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Apellido Paterno</td>
+                        <td width="60%"><input type="text" id="txtApaterno" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Email</td>
+                        <td width="60%"><input type="email" id="txtEmail" /></td>
+                    </tr>
+                    <tr>
+                        <td width="40%">Ingrese Area</td>
+                        <td><select id="cboAreaPopup"></select></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button id="btnAceptar" type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+                <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/Empleado.js"></script>
+<script src="~/Scripts/datatables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

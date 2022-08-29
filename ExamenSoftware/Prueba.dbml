@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PruebaEmpleados" Class="PruebaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-CUCJ7U1;Initial Catalog=PruebaEmpleados;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PruebaEmpleadosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.areas" Member="areas">
+    <Type Name="areas">
+      <Column Name="id_area" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="areas_empleados" Member="empleados" ThisKey="id_area" OtherKey="id_area" Type="empleados" />
+    </Type>
+  </Table>
+  <Table Name="dbo.empleados" Member="empleados">
+    <Type Name="empleados">
+      <Column Name="id_empleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidoPaterno" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="id_area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="areas_empleados" Member="areas" ThisKey="id_area" OtherKey="id_area" Type="areas" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
